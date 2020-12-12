@@ -58,7 +58,7 @@ def load_dataset(path):
         i = 0
         for batch in data_gen.flow(x, save_to_dir='Augmentation', save_prefix=x_label, save_format='jpg'):
             i += 1
-            if i > 9 : #determine number of additional images per origional image
+            if i > 5 : #determine number of additional images per origional image
                 break             
     print('Data Augmentation finished.\n')
 
@@ -216,9 +216,9 @@ def train_model(model, train_images, train_labels, batch_size, num_epochs, valid
 #            callbacks=[save_callback, tb_callback])
             #verbose = 0
     history_dict=history.history
-    train_accuracy=history_dict["acc"]
+    train_accuracy=history_dict["accuracy"]
     train_loss = history_dict["loss"]
-    valid_accuracy = history_dict["val_acc"]
+    valid_accuracy = history_dict["val_accuracy"]
     valid_loss = history_dict["val_loss"]
     return train_accuracy, train_loss, valid_accuracy, valid_loss
 
