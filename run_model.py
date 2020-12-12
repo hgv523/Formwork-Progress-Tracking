@@ -63,7 +63,7 @@ def load_dataset(path):
     print('Data Augmentation finished.\n')
 
 def data_reg(path):
-    e = 0# 1 is regenerate, 0 is keep origional
+    e = 1# 0 is regenerate, 0 is keep origional
     if e == 1:   
         load_dataset(path)
         
